@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/Apprentice_Study_Guide/static/css/main.584f321a.chunk.css",
+    "main.js": "/Apprentice_Study_Guide/static/js/main.2b0171b9.chunk.js",
+    "main.js.map": "/Apprentice_Study_Guide/static/js/main.2b0171b9.chunk.js.map",
+    "runtime~main.js": "/Apprentice_Study_Guide/static/js/runtime~main.7ba709cc.js",
+    "runtime~main.js.map": "/Apprentice_Study_Guide/static/js/runtime~main.7ba709cc.js.map",
+    "static/js/2.b41502e9.chunk.js": "/Apprentice_Study_Guide/static/js/2.b41502e9.chunk.js",
+    "static/js/2.b41502e9.chunk.js.map": "/Apprentice_Study_Guide/static/js/2.b41502e9.chunk.js.map",
+    "index.html": "/Apprentice_Study_Guide/index.html",
+    "precache-manifest.1a56089a1047b4b79d0cf97d32c5f13d.js": "/Apprentice_Study_Guide/precache-manifest.1a56089a1047b4b79d0cf97d32c5f13d.js",
+    "service-worker.js": "/Apprentice_Study_Guide/service-worker.js",
+    "static/css/main.584f321a.chunk.css.map": "/Apprentice_Study_Guide/static/css/main.584f321a.chunk.css.map",
+    "static/media/logo.svg": "/Apprentice_Study_Guide/static/media/logo.5d5d9eef.svg"
+  }
+}
