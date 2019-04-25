@@ -1,16 +1,15 @@
 {
   "files": {
-    "main.css": "/Apprentice-Study-Guide/static/css/main.584f321a.chunk.css",
-    "main.js": "/Apprentice-Study-Guide/static/js/main.d6da5f9e.chunk.js",
-    "main.js.map": "/Apprentice-Study-Guide/static/js/main.d6da5f9e.chunk.js.map",
+    "main.css": "/Apprentice-Study-Guide/static/css/main.3fa35b0c.chunk.css",
+    "main.js": "/Apprentice-Study-Guide/static/js/main.4421008d.chunk.js",
+    "main.js.map": "/Apprentice-Study-Guide/static/js/main.4421008d.chunk.js.map",
     "runtime~main.js": "/Apprentice-Study-Guide/static/js/runtime~main.296ff9db.js",
     "runtime~main.js.map": "/Apprentice-Study-Guide/static/js/runtime~main.296ff9db.js.map",
-    "static/js/2.7ad91dd1.chunk.js": "/Apprentice-Study-Guide/static/js/2.7ad91dd1.chunk.js",
-    "static/js/2.7ad91dd1.chunk.js.map": "/Apprentice-Study-Guide/static/js/2.7ad91dd1.chunk.js.map",
+    "static/js/2.21e67013.chunk.js": "/Apprentice-Study-Guide/static/js/2.21e67013.chunk.js",
+    "static/js/2.21e67013.chunk.js.map": "/Apprentice-Study-Guide/static/js/2.21e67013.chunk.js.map",
     "index.html": "/Apprentice-Study-Guide/index.html",
-    "precache-manifest.f0b0eb9e428880d6de22605f7461a66a.js": "/Apprentice-Study-Guide/precache-manifest.f0b0eb9e428880d6de22605f7461a66a.js",
+    "precache-manifest.c69e60e09a718b0a1c318b27d6aa661b.js": "/Apprentice-Study-Guide/precache-manifest.c69e60e09a718b0a1c318b27d6aa661b.js",
     "service-worker.js": "/Apprentice-Study-Guide/service-worker.js",
-    "static/css/main.584f321a.chunk.css.map": "/Apprentice-Study-Guide/static/css/main.584f321a.chunk.css.map",
-    "static/media/logo.svg": "/Apprentice-Study-Guide/static/media/logo.5d5d9eef.svg"
+    "static/css/main.3fa35b0c.chunk.css.map": "/Apprentice-Study-Guide/static/css/main.3fa35b0c.chunk.css.map"
   }
 }
