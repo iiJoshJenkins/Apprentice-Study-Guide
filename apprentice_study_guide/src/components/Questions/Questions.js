@@ -6,14 +6,26 @@ export default class Questions extends Component {
     this.state = {
       questions: props.questions.default,
       questionNumber: 0,
-      score: 0
+      score: 0,
+      incorrectAnswers: [],
+      showQuestions: false
     };
     this.handlePress = this.handlePress.bind(this);
-    this.getValueFromLetter = this.getValueFromLetter.bind(this);
+    this.getLetterOrValue = this.getLetterOrValue.bind(this);
     this.restartQuiz = this.restartQuiz.bind(this);
+    this.showIncorrectQuestions = this.showIncorrectQuestions.bind(this);
   }
-  getValueFromLetter(letter) {
-    switch (letter) {
+
+  getLetterOrValue(value) {
+    switch (value) {
+      case 0:
+        return "A";
+      case 1:
+        return "B";
+      case 2:
+        return "C";
+      case 3:
+        return "D";
       case "A":
         return 0;
       case "B":
@@ -23,17 +35,21 @@ export default class Questions extends Component {
       case "D":
         return 3;
       default:
-        console.error("There's something wrong with your correctAnswer value");
+        console.error("Something wen't wrong, please try again!");
     }
   }
   handlePress(e) {
     const currentQuestion = this.state.questions[this.state.questionNumber];
-    if (
-      currentQuestion.answers[
-        this.getValueFromLetter(currentQuestion.correctAnswer)
-      ] === e.target.innerHTML
-    ) {
+    const userAnswer = this.getLetterOrValue(
+      currentQuestion.answers.indexOf(e.target.innerHTML)
+    );
+
+    if (currentQuestion.correctAnswer === userAnswer) {
       this.setState({ score: this.state.score + 1 });
+    } else {
+      let _incorrectAnswers = this.state.incorrectAnswers;
+      _incorrectAnswers.push([currentQuestion, { userAnswer: userAnswer }]);
+      this.setState({ incorrectAnswers: _incorrectAnswers });
     }
     this.setState({ questionNumber: this.state.questionNumber + 1 });
   }
@@ -43,6 +59,10 @@ export default class Questions extends Component {
       questionNumber: 0,
       score: 0
     });
+  }
+
+  showIncorrectQuestions() {
+    this.setState({ showQuestions: true });
   }
 
   render() {
@@ -66,14 +86,53 @@ export default class Questions extends Component {
             </ul>
           </div>
         )}
-        {this.state.questionNumber >= this.state.questions.length && (
-          <div className="Question_Container">
-            <h1> You've completed all the questions </h1>
-            <h3>
-              Your score was : {this.state.score}/{this.state.questions.length}
-            </h3>
+        {this.state.showQuestions === false &&
+          this.state.questionNumber >= this.state.questions.length && (
+            <div className="Question_Container">
+              <h1> You've completed all the questions </h1>
+              <h3>
+                Your score was : {this.state.score}/
+                {this.state.questions.length}
+              </h3>
+              <button onClick={this.restartQuiz}>Try again?</button>
+              <button onClick={this.showIncorrectQuestions}>
+                Show me what I did wrong
+              </button>
+            </div>
+          )}
+        {this.state.showQuestions && (
+          <span>
+            {this.state.incorrectAnswers.map(e => {
+              const questionObj = e[0];
+              const userAnswer = e[1].userAnswer;
+              return (
+                <div>
+                  <h3> {questionObj.question} </h3>
+                  <ul>
+                    {questionObj.answers.map((answer, index) => {
+                      if (index === this.getLetterOrValue(userAnswer)) {
+                        return (
+                          <li key={answer} style={{ backgroundColor: "red" }}>
+                            {answer}
+                          </li>
+                        );
+                      } else if (
+                        index ===
+                        this.getLetterOrValue(questionObj.correctAnswer)
+                      ) {
+                        return (
+                          <li key={answer} style={{ backgroundColor: "green" }}>
+                            {answer}
+                          </li>
+                        );
+                      } else return <li key={answer}>{answer}</li>;
+                    })}
+                  </ul>
+                </div>
+              );
+            })}
             <button onClick={this.restartQuiz}>Try again?</button>
-          </div>
+          </span>
         )}
       </div>
     );
