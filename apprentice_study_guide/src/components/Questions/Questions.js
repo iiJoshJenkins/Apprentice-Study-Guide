@@ -57,7 +57,8 @@ export default class Questions extends Component {
   restartQuiz() {
     this.setState({
       questionNumber: 0,
-      score: 0
+      score: 0,
+      showQuestions: false
     });
   }
 
@@ -68,24 +69,27 @@ export default class Questions extends Component {
   render() {
     return (
       <div>
-        {this.state.questionNumber < this.state.questions.length && (
-          <div className="Question_Container">
-            <h3>{this.state.questions[this.state.questionNumber].question}</h3>
-            <ul className="Answer_List">
-              {this.state.questions[this.state.questionNumber].answers.map(
-                e => {
-                  return (
-                    <li key={e}>
-                      <button className="Answer" onClick={this.handlePress}>
-                        {e}
-                      </button>
-                    </li>
-                  );
-                }
-              )}
-            </ul>
-          </div>
-        )}
+        {this.state.showQuestions === false &&
+          this.state.questionNumber < this.state.questions.length && (
+            <div className="Question_Container">
+              <h3>
+                {this.state.questions[this.state.questionNumber].question}
+              </h3>
+              <ul className="Answer_List">
+                {this.state.questions[this.state.questionNumber].answers.map(
+                  e => {
+                    return (
+                      <li key={e}>
+                        <button className="Answer" onClick={this.handlePress}>
+                          {e}
+                        </button>
+                      </li>
+                    );
+                  }
+                )}
+              </ul>
+            </div>
+          )}
         {this.state.showQuestions === false &&
           this.state.questionNumber >= this.state.questions.length && (
             <div className="Question_Container">
@@ -102,17 +106,20 @@ export default class Questions extends Component {
           )}
         {this.state.showQuestions && (
           <span>
-            {this.state.incorrectAnswers.map(e => {
+            {this.state.incorrectAnswers.map((e, index) => {
               const questionObj = e[0];
               const userAnswer = e[1].userAnswer;
               return (
-                <div>
+                <div key={e + index}>
                   <h3> {questionObj.question} </h3>
                   <ul>
                     {questionObj.answers.map((answer, index) => {
                       if (index === this.getLetterOrValue(userAnswer)) {
                         return (
-                          <li key={answer} style={{ backgroundColor: "red" }}>
+                          <li
+                            key={answer + index}
+                            style={{ backgroundColor: "red" }}
+                          >
                             {answer}
                           </li>
                         );
@@ -121,11 +128,14 @@ export default class Questions extends Component {
                         this.getLetterOrValue(questionObj.correctAnswer)
                       ) {
                         return (
-                          <li key={answer} style={{ backgroundColor: "green" }}>
+                          <li
+                            key={answer + index}
+                            style={{ backgroundColor: "green" }}
+                          >
                             {answer}
                           </li>
                         );
-                      } else return <li key={answer}>{answer}</li>;
+                      } else return <li key={answer + index}>{answer}</li>;
                     })}
                   </ul>
                 </div>
