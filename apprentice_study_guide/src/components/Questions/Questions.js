@@ -10,6 +10,7 @@ export default class Questions extends Component {
     };
     this.handlePress = this.handlePress.bind(this);
     this.getValueFromLetter = this.getValueFromLetter.bind(this);
+    this.restartQuiz = this.restartQuiz.bind(this);
   }
   getValueFromLetter(letter) {
     switch (letter) {
@@ -32,10 +33,16 @@ export default class Questions extends Component {
         this.getValueFromLetter(currentQuestion.correctAnswer)
       ] === e.target.innerHTML
     ) {
-      console.log(this.state.score);
       this.setState({ score: this.state.score + 1 });
     }
     this.setState({ questionNumber: this.state.questionNumber + 1 });
+  }
+
+  restartQuiz() {
+    this.setState({
+      questionNumber: 0,
+      score: 0
+    });
   }
 
   render() {
@@ -65,6 +72,7 @@ export default class Questions extends Component {
             <h3>
               Your score was : {this.state.score}/{this.state.questions.length}
             </h3>
+            <button onClick={this.restartQuiz}>Try again?</button>
           </div>
         )}
       </div>
