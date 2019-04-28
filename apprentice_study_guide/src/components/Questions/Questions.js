@@ -58,6 +58,7 @@ export default class Questions extends Component {
     this.setState({
       questionNumber: 0,
       score: 0,
+      incorrectAnswers: [],
       showQuestions: false
     });
   }
