@@ -1,20 +1,18 @@
 {
-  "homepage": "http://iijoshjenkins.github.io/Apprentice-Study-Guide/",
   "name": "apprentice_study_guide",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "react-scripts": "3.0.0"
+    "react-scripts": "3.0.1",
+    "redux-saga": "^1.0.5"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -30,8 +28,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "gh-pages": "^2.0.1"
   }
 }
