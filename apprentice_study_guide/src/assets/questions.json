@@ -15,7 +15,7 @@
       "To determine the communication processes between entities",
       "To ensure the requirements are achievable",
       "To determine the enhanced user experience",
-      "To identify all isssues accociated with the system"
+      "To identify all issues associated with the system"
     ],
     "correctAnswer": "B"
   },
@@ -24,7 +24,7 @@
     "answers": [
       "The level of documentation is thorough",
       "The pace of development is fast",
-      "A formal test stratergy is implemented",
+      "A formal test strategy is implemented",
       "All non-functional requirements are implemented"
     ],
     "correctAnswer": "B"
@@ -70,12 +70,12 @@
     "correctAnswer": "C"
   },
   {
-    "question": "What is the main purpose of rasing faults with the development team during the 'maintenance stage' of application development?",
+    "question": "What is the main purpose of raising faults with the development team during the 'maintenance stage' of application development?",
     "answers": [
       "To allow the usability of the system to be measured",
-      "To eable integration with bespoke software",
+      "To enable integration with bespoke software",
       "To ensure that platform specific skills are retained",
-      "To indentify critical issues affecting system availability"
+      "To identify critical issues affecting system availability"
     ],
     "correctAnswer": "D"
   },
@@ -97,7 +97,7 @@
   {
     "question": "Which one of the following is a benefit of a procedural approach in a software development lifecycle?",
     "answers": [
-      "Initial analysic at project inception",
+      "Initial analysis at project inception",
       "Allows adoption of a prototype model",
       "Development driven design",
       "Standardisation of stages"
@@ -239,7 +239,7 @@
     "answers": [
       "System engineer",
       "Software designer",
-      "Buisness analyst",
+      "Business analyst",
       "Project manager"
     ],
     "correctAnswer": "C"
@@ -249,7 +249,7 @@
     "answers": [
       "Project manager",
       "Software tester",
-      "Buisness analyst",
+      "Business analyst",
       "System engineer"
     ],
     "correctAnswer": "B"
