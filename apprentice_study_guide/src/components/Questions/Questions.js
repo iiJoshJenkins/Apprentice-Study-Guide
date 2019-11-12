@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-import "./Questions.css";
+import React, { Component } from 'react';
+import './Questions.css';
 export default class Questions extends Component {
   constructor(props) {
     super(props);
@@ -19,20 +19,20 @@ export default class Questions extends Component {
   getLetterOrValue(value) {
     switch (value) {
       case 0:
-        return "A";
+        return 'A';
       case 1:
-        return "B";
+        return 'B';
       case 2:
-        return "C";
+        return 'C';
       case 3:
-        return "D";
-      case "A":
+        return 'D';
+      case 'A':
         return 0;
-      case "B":
+      case 'B':
         return 1;
-      case "C":
+      case 'C':
         return 2;
-      case "D":
+      case 'D':
         return 3;
       default:
         console.error("Something wen't wrong, please try again!");
@@ -78,11 +78,15 @@ export default class Questions extends Component {
               </h3>
               <ul className="Answer_List">
                 {this.state.questions[this.state.questionNumber].answers.map(
-                  e => {
+                  (answerText, id) => {
                     return (
-                      <li key={e}>
+                      <li key={answerText}>
                         <button className="Answer" onClick={this.handlePress}>
-                          {e}
+                          <span className="Answer_Label">
+                            {' '}
+                            {this.getLetterOrValue(id)}{' '}
+                          </span>{' '}
+                          {answerText}
                         </button>
                       </li>
                     );
@@ -119,7 +123,7 @@ export default class Questions extends Component {
                         return (
                           <li
                             key={answer + index}
-                            style={{ backgroundColor: "red" }}
+                            style={{ backgroundColor: 'red' }}
                           >
                             {answer}
                           </li>
@@ -131,7 +135,7 @@ export default class Questions extends Component {
                         return (
                           <li
                             key={answer + index}
-                            style={{ backgroundColor: "green" }}
+                            style={{ backgroundColor: 'green' }}
                           >
                             {answer}
                           </li>

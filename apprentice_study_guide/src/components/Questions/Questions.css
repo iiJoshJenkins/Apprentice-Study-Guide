@@ -1,20 +1,26 @@
+/*TODO: Media Query to higher res screens*/
 .Question_Container {
   background: #efefef;
   border: 1px solid black;
   border-radius: 15px;
   width: 60%;
-  height: 40%;
+  height: 45%;
   position: absolute;
   left: 50%;
-  top: 60%;
+  top: 40%;
   margin: -20% 0 0 -30%;
   text-align: center;
   font-size: 16px;
+  padding-top: 15px;
+}
+
+.Question_Container h3 {
+  font-size: 26px;
 }
 
 .Answer_List {
-  list-style-type: lower-alpha;
-  list-style-position: inside;
+  list-style-type: none;
+  margin-top: 30px;
 }
 
 .Answer_List li {
@@ -22,7 +28,25 @@
 }
 
 .Answer {
-  width: 100%;
+  width: 90%;
   height: 40px;
   font-size: 16px;
+  background: none;
+  border: none;
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.Answer_Label {
+  position: absolute;
+  font: 300 18px sans-serif;
+  left: 5%;
+  text-align: center;
+  color: #000;
+  line-height: 26px;
+  border: 1px solid black;
+  border-radius: 45px;
+  width: 26px;
+  height: 26px;
+  background: #fff;
 }
